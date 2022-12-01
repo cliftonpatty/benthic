@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvp6fbxpfl4ac"]
+
+[ext_resource type="Script" path="res://entities/meat/meat_tetrominoes.gd" id="1_kvi33"]
+[ext_resource type="Texture2D" uid="uid://busektrmdr2ej" path="res://assets/images/fish/chunks/meat_l.png" id="2_750dr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8ia"]
+size = Vector2(64, 64)
+
+[node name="MeatTetrominoes" type="Node2D"]
+rotation = 1.5708
+script = ExtResource("1_kvi33")
+metadata/_edit_group_ = true
+
+[node name="MeatSprite" type="Sprite2D" parent="."]
+position = Vector2(32.2104, -62.0937)
+scale = Vector2(0.459538, 0.482134)
+texture = ExtResource("2_750dr")
+
+[node name="GridSettling" type="Area2D" parent="."]
+collision_mask = 32
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GridSettling"]
+polygon = PackedVector2Array(-8, -136, -8, 16, 8, 16, 8, -120, 72, -120, 72, -136)
+
+[node name="GridDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GridDetection"]
+shape = SubResource("RectangleShape2D_5y8ia")
+
+[node name="MouseDetection" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseDetection"]
+polygon = PackedVector2Array(-32, 32, -32, -160, 96, -160, 96, -96, 32, -96, 32, 32)
+
+[connection signal="input_event" from="MouseDetection" to="." method="_on_mouse_detection_input_event"]
+[connection signal="mouse_entered" from="MouseDetection" to="." method="_on_mouse_detection_mouse_entered"]
+[connection signal="mouse_exited" from="MouseDetection" to="." method="_on_mouse_detection_mouse_exited"]

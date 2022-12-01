@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0u72i8g77sxn"]
+
+[ext_resource type="Script" path="res://entities/world/selling/trade_town.gd" id="1_mxcfd"]
+[ext_resource type="Texture2D" uid="uid://cgjaxgl8smud7" path="res://assets/images/fish/art-test_shrimp.png" id="2_qeiv6"]
+[ext_resource type="PackedScene" path="res://entities/world/selling/fish_reciever.tscn" id="3_1fvjr"]
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_mxcfd")
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(302, 422)
+scale = Vector2(0.393862, 0.393862)
+texture = ExtResource("2_qeiv6")
+
+[node name="FishReciever" parent="." instance=ExtResource("3_1fvjr")]
+position = Vector2(195, 129)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 609.0
+offset_top = 133.0
+offset_right = 1137.0
+offset_bottom = 635.0

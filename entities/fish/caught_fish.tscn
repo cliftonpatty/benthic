@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://kmpwod30734n"]
+
+[ext_resource type="Script" path="res://entities/fish/caught_fish.gd" id="1_sybbe"]
+
+[node name="CaughtFish" type="Node2D"]
+script = ExtResource("1_sybbe")
+
+[node name="FishLine" type="Node2D" parent="."]
+visible = false
+
+[node name="Chunks" type="Node2D" parent="."]

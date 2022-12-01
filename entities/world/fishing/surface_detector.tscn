@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://entities/world/fishing/surface_detector.gd" id="1_mvvq2"]
+[ext_resource type="Texture2D" uid="uid://y5q7ndeplegt" path="res://assets/images/world/surface-placeholder.png" id="2_rm8bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejwg8"]
+size = Vector2(3069, 25)
+
+[node name="SurfaceDetect" type="Area2D"]
+script = ExtResource("1_mvvq2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-11, 690)
+scale = Vector2(0.287, 0.543)
+y_sort_enabled = true
+texture = ExtResource("2_rm8bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 26)
+shape = SubResource("RectangleShape2D_ejwg8")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://entities/world/selling/fish_reciever.gd" id="1_qaqv6"]
+
+[node name="FishReciever" type="Node2D"]
+script = ExtResource("1_qaqv6")

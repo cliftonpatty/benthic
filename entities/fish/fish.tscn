@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdua2xn7uojc0"]
+
+[ext_resource type="Script" path="res://entities/fish/fish.gd" id="1_6s5iu"]
+[ext_resource type="Texture2D" uid="uid://dyha5jcl5l1py" path="res://assets/images/effects/blood_splat_gen-01.png" id="2_u4uuf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_we2b8"]
+radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xjaa"]
+atlas = ExtResource("2_u4uuf")
+region = Rect2(0, 0, 1380, 1382)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6enp"]
+atlas = ExtResource("2_u4uuf")
+region = Rect2(1380, 0, 1380, 1382)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbxdj"]
+atlas = ExtResource("2_u4uuf")
+region = Rect2(2760, 0, 1380, 1382)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_47c2c"]
+atlas = ExtResource("2_u4uuf")
+region = Rect2(4140, 0, 1380, 1382)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wufxs"]
+atlas = ExtResource("2_u4uuf")
+region = Rect2(5520, 0, 1380, 1382)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4rk10"]
+animations = [{
+"frames": [SubResource("AtlasTexture_4xjaa"), SubResource("AtlasTexture_e6enp"), SubResource("AtlasTexture_qbxdj"), SubResource("AtlasTexture_47c2c"), SubResource("AtlasTexture_wufxs")],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="fish" type="RigidBody2D" groups=["Fish"]]
+collision_layer = 4
+collision_mask = 3
+sleeping = true
+freeze = true
+script = ExtResource("1_6s5iu")
+id = "fish"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="Body" type="CollisionShape2D" parent="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.051, 0.051)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_we2b8")
+disabled = true
+
+[node name="BloodSplat" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-32, -2)
+scale = Vector2(0.0608696, 0.0608695)
+frames = SubResource("SpriteFrames_4rk10")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="animation_finished" from="BloodSplat" to="." method="_on_animated_sprite_2d_animation_finished"]
