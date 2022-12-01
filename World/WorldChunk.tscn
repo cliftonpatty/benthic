@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://o2pj5cbdamx1"]
+
+[ext_resource type="Script" path="res://World/Scripts/wall_chunk.gd" id="1_bq5nd"]
+[ext_resource type="Texture2D" uid="uid://cxe0a64yctrkw" path="res://assets/images/world/water-placeholder.png" id="2_wmpmr"]
+[ext_resource type="Texture2D" uid="uid://58iitn42r5ld" path="res://assets/images/world/Wall_Left.png" id="3_sma0d"]
+[ext_resource type="Script" path="res://World/Scripts/FishSpawn.gd" id="4_4u8xf"]
+[ext_resource type="PackedScene" uid="uid://dx8e3fy8xwtxh" path="res://Fish/Individual/greeny.tscn" id="4_ekwyj"]
+[ext_resource type="Texture2D" uid="uid://cbmtokuevr37u" path="res://assets/images/world/Wall_Right.png" id="4_f0r2r"]
+[ext_resource type="PackedScene" uid="uid://bn6hsse8mmhf1" path="res://Fish/Individual/redy.tscn" id="6_5pjv2"]
+[ext_resource type="PackedScene" uid="uid://dvidbargadinl" path="res://Fish/Individual/eel.tscn" id="7_3015x"]
+[ext_resource type="PackedScene" uid="uid://braob1taw7won" path="res://Fish/Individual/blobfish.tscn" id="8_mx1e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nutxc"]
+size = Vector2(246, 1618)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0wh0"]
+size = Vector2(1136, 1637)
+
+[node name="WallChunk" type="Node2D"]
+position = Vector2(-328, 0)
+z_index = -1
+y_sort_enabled = true
+script = ExtResource("1_bq5nd")
+
+[node name="Water-placeholder" type="Sprite2D" parent="."]
+position = Vector2(808, 857.75)
+scale = Vector2(0.787576, 0.44655)
+z_index = -2
+texture = ExtResource("2_wmpmr")
+
+[node name="Chunk" type="StaticBody2D" parent="."]
+
+[node name="WallLeft" type="Sprite2D" parent="Chunk"]
+position = Vector2(216.938, 804)
+scale = Vector2(0.217753, 0.0866193)
+texture = ExtResource("3_sma0d")
+
+[node name="Polygon2D" type="Polygon2D" parent="Chunk/WallLeft"]
+position = Vector2(-1760.02, -9293.55)
+scale = Vector2(7.55779, 11.5448)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(217.722, 1.00079, -960.123, 1.00079, -1000.12, 1729, 217.722, 1729)
+
+[node name="WallRight" type="Sprite2D" parent="Chunk"]
+position = Vector2(1536.56, 804)
+scale = Vector2(0.209774, 0.0866193)
+texture = ExtResource("4_f0r2r")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Chunk/WallRight"]
+position = Vector2(91.6382, -9362.81)
+scale = Vector2(7.55779, 11.5448)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(1012.87, 7.99998, -4.12506, 7.00018, 1.875, 1719, 1009.87, 1719, 994.874, 848.998)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chunk"]
+position = Vector2(113, 799)
+shape = SubResource("RectangleShape2D_nutxc")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Chunk"]
+position = Vector2(1634, 799)
+shape = SubResource("RectangleShape2D_nutxc")
+
+[node name="OnScreen" type="Node2D" parent="."]
+position = Vector2(854, 1597)
+metadata/_edit_group_ = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="OnScreen"]
+position = Vector2(25.5, 0)
+scale = Vector2(63.25, 1)
+
+[node name="FishSpawn" type="Area2D" parent="."]
+position = Vector2(840, 37)
+z_index = 2
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("4_4u8xf")
+fish = [ExtResource("4_ekwyj"), ExtResource("6_5pjv2"), ExtResource("7_3015x"), ExtResource("8_mx1e3")]
+spawnAmount = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FishSpawn"]
+position = Vector2(40, 808.5)
+shape = SubResource("RectangleShape2D_e0wh0")
+
+[node name="Timer" type="Timer" parent="FishSpawn"]
+
+[connection signal="screen_entered" from="OnScreen/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]

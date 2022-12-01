@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://d16yx3hurdqh7"]
+
+[ext_resource type="Script" path="res://Fish/Scripts/schooling_fish.gd" id="1_oc4eb"]
+
+[sub_resource type="Curve2D" id="Curve2D_jjk6p"]
+_data = {
+"points": PackedVector2Array(28.0616, 14.0308, -28.0616, -14.0308, 210, -22, -62.2966, -69.5926, 62.2966, 69.5926, 151, 44, 53.8782, 2.24492, -53.8782, -2.24492, 210, -22)
+}
+point_count = 3
+
+[node name="SchoolingFish" type="Node2D"]
+position = Vector2(36, 89)
+script = ExtResource("1_oc4eb")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(14, 3)
+curve = SubResource("Curve2D_jjk6p")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(210, -22)
+rotation = -2.74237
+
+[node name="Fish" type="Node2D" parent="."]
+position = Vector2(2, 1)
+
+[node name="Polygon2D" type="Polygon2D" parent="Fish"]
+position = Vector2(261.234, -36.6163)
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Fish"]
+position = Vector2(245.234, -26.6163)
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Fish"]
+position = Vector2(209.234, -33.6163)
+rotation = 0.810745
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Fish"]
+position = Vector2(267.234, -8.61634)
+rotation = 0.810745
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Fish"]
+position = Vector2(225.234, 17.3837)
+rotation = 0.810745
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Fish"]
+position = Vector2(211.234, -15.6163)
+rotation = 0.810745
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)
+
+[node name="Polygon2D7" type="Polygon2D" parent="Fish"]
+position = Vector2(195.234, 9.38366)
+rotation = 0.810745
+polygon = PackedVector2Array(-11, -8, -15, -1, -8, 4, -2, -5)

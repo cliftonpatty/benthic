@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://u6alppscryk2"]
+
+[ext_resource type="Texture2D" uid="uid://dfcs5jg4eor1u" path="res://assets/images/world/claw.png" id="1_4h2wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_708g8"]
+size = Vector2(560, 105)
+
+[node name="Claw" type="Node2D"]
+
+[node name="ClawDetect" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClawDetect"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_708g8")
+
+[node name="Claw" type="Sprite2D" parent="."]
+position = Vector2(0, -432)
+scale = Vector2(0.0863309, 0.100719)
+z_index = 2
+texture = ExtResource("1_4h2wo")
