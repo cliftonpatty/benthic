@@ -6,6 +6,7 @@
 size = Vector2(64, 64)
 
 [node name="GridBlock" type="Area2D" groups=["grid"]]
+modulate = Color(1, 1, 1, 0.0941176)
 collision_layer = 32
 script = ExtResource("1_luxi7")
 

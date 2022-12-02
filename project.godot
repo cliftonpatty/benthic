@@ -68,6 +68,7 @@ Rotate={
 2d_physics/layer_4="StateTriggers"
 2d_physics/layer_5="Meat"
 2d_physics/layer_6="GridSettling"
+2d_physics/layer_7="Crystals"
 
 [rendering]
 

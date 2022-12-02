@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://dx8xnir438yu0"]
 
 [ext_resource type="Script" path="res://entities/world/fishing/world.gd" id="1_ojd0u"]
 [ext_resource type="Texture2D" uid="uid://bbv7q1h0dea1g" path="res://assets/images/world/sunset.png" id="2_1wun8"]
 [ext_resource type="PackedScene" path="res://ui/scripts/gas_tank.tscn" id="4_j4qv7"]
-[ext_resource type="PackedScene" path="res://entities/world/fishing/surface_detector.tscn" id="5_acnnk"]
+[ext_resource type="PackedScene" uid="uid://c4jwe1a86bsyt" path="res://entities/world/fishing/surface_detector.tscn" id="5_acnnk"]
 [ext_resource type="PackedScene" path="res://entities/player/player.tscn" id="5_yn7rj"]
 [ext_resource type="Script" path="res://entities/world/fishing/world_spawner.gd" id="6_cy0nd"]
 [ext_resource type="PackedScene" uid="uid://u6alppscryk2" path="res://entities/world/fishing/claw.tscn" id="6_ph72x"]
@@ -13,7 +13,7 @@
 script = ExtResource("1_ojd0u")
 
 [node name="WorldSpawner" type="Node2D" parent="."]
-position = Vector2(-2.99994, 643)
+position = Vector2(-2, 605)
 scale = Vector2(0.73534, 0.703868)
 script = ExtResource("6_cy0nd")
 
@@ -38,7 +38,6 @@ offset_right = 577.0
 offset_bottom = 327.0
 
 [node name="Button" type="Button" parent="Camera2D/UI"]
-layout_mode = 0
 offset_left = 1039.0
 offset_top = 591.0
 offset_right = 1130.0
@@ -46,14 +45,12 @@ offset_bottom = 623.0
 text = "DIVE"
 
 [node name="Label" type="Label" parent="Camera2D/UI"]
-layout_mode = 0
 offset_left = 10.0
 offset_top = 3.0
 offset_right = 123.0
 offset_bottom = 26.0
 
 [node name="NextScene" type="Button" parent="Camera2D/UI"]
-layout_mode = 0
 offset_left = 871.0
 offset_top = 591.0
 offset_right = 1028.0
@@ -61,14 +58,12 @@ offset_bottom = 623.0
 text = "Next Scene Debug"
 
 [node name="Debug" type="RichTextLabel" parent="Camera2D/UI"]
-layout_mode = 0
 offset_left = -306.0
 offset_top = 17.0
 offset_right = 3.0
 offset_bottom = 546.0
 
 [node name="GasTank" parent="Camera2D/UI" instance=ExtResource("4_j4qv7")]
-layout_mode = 1
 offset_left = 5.0
 offset_top = 464.0
 offset_right = 40.0

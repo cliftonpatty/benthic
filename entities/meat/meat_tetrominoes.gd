@@ -57,8 +57,6 @@ func _on_mouse_detection_input_event(viewport: Node, event: InputEvent, shape_id
 		emit_signal("dragged", self, false)
 		z_index = 1
 
-func get_bonus(from):
-	if gotBonus.find(from) < 0:
-		gotBonus.append[from]
-		value = value * 2
-		
+func settle_bonus():
+	if gridCoverage == len(gridSettling.get_overlapping_areas()):
+		print(gridSettling.get_overlapping_areas())

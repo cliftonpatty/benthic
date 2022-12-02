@@ -1,14 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://cot4x7imsktkj"]
+[gd_scene load_steps=8 format=3 uid="uid://cot4x7imsktkj"]
 
 [ext_resource type="Script" path="res://entities/world/sorting/ice_box.gd" id="1_oio71"]
 [ext_resource type="PackedScene" uid="uid://bu61gi1xmoatf" path="res://entities/world/sorting/grid_block.tscn" id="2_ji80q"]
-[ext_resource type="PackedScene" uid="uid://bvp6fbxpfl4ac" path="res://entities/meat/meat_tetrominoes.tscn" id="3_f0fr3"]
-[ext_resource type="PackedScene" uid="uid://xhur2wdo0nhv" path="res://entities/meat/pieces/square_meat.tscn" id="3_nyaon"]
 [ext_resource type="PackedScene" uid="uid://lqg1r7ct7mgh" path="res://entities/meat/pieces/stair_step.tscn" id="4_7qeeu"]
+[ext_resource type="PackedScene" uid="uid://dyksep4en5rsw" path="res://entities/meat/pieces/square.tscn" id="5_jbo7m"]
+[ext_resource type="PackedScene" uid="uid://xhxqn0gngjmt" path="res://entities/meat/pieces/l_meat.tscn" id="5_umgpf"]
 [ext_resource type="PackedScene" uid="uid://c3r82l3a7yse2" path="res://entities/meat/crystal_tetrominoes.tscn" id="6_va3eh"]
+[ext_resource type="Texture2D" uid="uid://cntn1px0eikfp" path="res://assets/images/world/ice_box.png" id="7_2hpu4"]
 
 [node name="IceBox" type="Node2D"]
 script = ExtResource("1_oio71")
+
+[node name="IceBox2" type="Sprite2D" parent="."]
+position = Vector2(749.5, 323)
+scale = Vector2(0.701161, 0.921418)
+texture = ExtResource("7_2hpu4")
 
 [node name="Grid" type="Node2D" parent="."]
 
@@ -21,32 +27,29 @@ offset_bottom = 8.0
 
 [node name="Meat" type="Node2D" parent="."]
 
-[node name="CrystalTetrominoes" parent="Meat" instance=ExtResource("6_va3eh")]
+[node name="LMeat2" parent="Meat" instance=ExtResource("5_umgpf")]
+position = Vector2(53, 398)
 
-[node name="MeatTetrominoes7" parent="Meat" instance=ExtResource("3_nyaon")]
-position = Vector2(127, 341)
+[node name="Square" parent="Meat" instance=ExtResource("5_jbo7m")]
+position = Vector2(55, 194)
 
-[node name="MeatTetrominoes8" parent="Meat" instance=ExtResource("3_nyaon")]
-position = Vector2(279, 364)
+[node name="Square2" parent="Meat" instance=ExtResource("5_jbo7m")]
+position = Vector2(52, 124)
 
-[node name="MeatTetrominoes9" parent="Meat" instance=ExtResource("3_nyaon")]
-position = Vector2(144, 184)
+[node name="StairStep" parent="Meat" instance=ExtResource("4_7qeeu")]
+position = Vector2(190, 189)
 
-[node name="MeatTetrominoes" parent="Meat" instance=ExtResource("3_f0fr3")]
-position = Vector2(207, 586)
+[node name="StairStep2" parent="Meat" instance=ExtResource("4_7qeeu")]
+position = Vector2(264, 262)
 
-[node name="MeatTetrominoes2" parent="Meat" instance=ExtResource("3_f0fr3")]
-position = Vector2(196, 384)
+[node name="Square3" parent="Meat" instance=ExtResource("5_jbo7m")]
+position = Vector2(258, 340)
 
-[node name="MeatTetrominoes3" parent="Meat" instance=ExtResource("3_f0fr3")]
-position = Vector2(61, 590)
+[node name="LMeat" parent="Meat" instance=ExtResource("5_umgpf")]
+position = Vector2(45, 596)
 
-[node name="MeatTetrominoes4" parent="Meat" instance=ExtResource("3_f0fr3")]
-position = Vector2(54, 183)
+[node name="CrystalTetrominoes2" parent="Meat" instance=ExtResource("6_va3eh")]
+position = Vector2(142, 567)
 
-[node name="MeatTetrominoes5" parent="Meat" instance=ExtResource("3_f0fr3")]
-position = Vector2(58, 385)
-
-[node name="MeatTetrominoes6" parent="Meat" instance=ExtResource("4_7qeeu")]
-position = Vector2(189, 109)
-rotation = 1.5708
+[node name="CrystalTetrominoes3" parent="Meat" instance=ExtResource("6_va3eh")]
+position = Vector2(155, 365)

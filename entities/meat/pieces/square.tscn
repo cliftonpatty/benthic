@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dd0qtq105g0jv"]
+[gd_scene load_steps=5 format=3 uid="uid://dyksep4en5rsw"]
 
 [ext_resource type="PackedScene" uid="uid://bvp6fbxpfl4ac" path="res://entities/meat/meat_tetrominoes.tscn" id="1_3n0sq"]
 [ext_resource type="Shader" path="res://assets/shaders/OutlinedSprite.gdshader" id="2_osmtt"]

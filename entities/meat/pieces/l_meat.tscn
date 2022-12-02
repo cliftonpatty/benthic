@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://xhxqn0gngjmt"]
+
+[ext_resource type="PackedScene" uid="uid://bvp6fbxpfl4ac" path="res://entities/meat/meat_tetrominoes.tscn" id="1_p17yp"]
+[ext_resource type="Shader" path="res://assets/shaders/OutlinedSprite.gdshader" id="2_2fvm5"]
+[ext_resource type="Texture2D" uid="uid://da25yedebjujl" path="res://assets/images/fish/chunks/l_meat_frames.png" id="3_xp50w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q15uq"]
+resource_local_to_scene = true
+shader = ExtResource("2_2fvm5")
+shader_parameter/Smooth = null
+shader_parameter/outline_color = Vector4(0.86, 0.39, 0, 1)
+shader_parameter/pixel_size = null
+shader_parameter/width = 0.0
+shader_parameter/width_speed = 2.744
+
+[node name="LMeat" instance=ExtResource("1_p17yp")]
+
+[node name="MeatSprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_q15uq")
+texture = ExtResource("3_xp50w")
+hframes = 2

@@ -25,18 +25,22 @@ position = Vector2(-3, -12)
 scale = Vector2(0.600939, 0.630488)
 texture = ExtResource("3_affow")
 
+[node name="MouseDetection" parent="." index="1"]
+collision_mask = 65
+
 [node name="CollisionPolygon2D" parent="MouseDetection" index="0"]
 polygon = PackedVector2Array(-32, 32, -32, -32, 32, -32, 32, 32)
 
 [node name="GridSettling" parent="." index="2"]
 collision_layer = 1
+collision_mask = 96
 
 [node name="CollisionPolygon2D" parent="GridSettling" index="0"]
 polygon = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 
 [node name="BonusDetection" type="Area2D" parent="." index="4"]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BonusDetection" index="0"]
 shape = SubResource("RectangleShape2D_07l1e")

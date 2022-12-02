@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvp6fbxpfl4ac"]
+[gd_scene load_steps=5 format=3 uid="uid://bvp6fbxpfl4ac"]
 
 [ext_resource type="Script" path="res://entities/meat/meat_tetrominoes.gd" id="1_kvi33"]
-[ext_resource type="Texture2D" uid="uid://busektrmdr2ej" path="res://assets/images/fish/chunks/meat_l.png" id="2_750dr"]
 [ext_resource type="Shader" path="res://assets/shaders/OutlinedSprite.gdshader" id="2_c11em"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uqy6u"]
@@ -16,7 +15,7 @@ shader_parameter/width_speed = 2.744
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8ia"]
 size = Vector2(64, 64)
 
-[node name="MeatTetrominoes" type="Node2D" groups=["block"]]
+[node name="MeatTetrominoes" type="Node2D" groups=["block", "meat"]]
 z_index = 1
 script = ExtResource("1_kvi33")
 metadata/_edit_group_ = true
@@ -26,7 +25,6 @@ modulate = Color(0.862745, 0.392157, 0, 1)
 material = SubResource("ShaderMaterial_uqy6u")
 position = Vector2(32.2104, -62.0937)
 scale = Vector2(0.459538, 0.482134)
-texture = ExtResource("2_750dr")
 
 [node name="MouseDetection" type="Area2D" parent="." groups=["block"]]
 modulate = Color(0, 0, 0, 1)
@@ -47,6 +45,7 @@ polygon = PackedVector2Array(-8, -136, -8, 16, 8, 16, 8, -120, 72, -120, 72, -13
 shape = SubResource("RectangleShape2D_5y8ia")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_direction = 2
 offset_left = -13.0
 offset_top = -145.0
