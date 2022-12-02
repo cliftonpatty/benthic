@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://xhur2wdo0nhv"]
+
+[ext_resource type="PackedScene" uid="uid://bvp6fbxpfl4ac" path="res://entities/meat/meat_tetrominoes.tscn" id="1_3qspu"]
+[ext_resource type="Shader" path="res://assets/shaders/OutlinedSprite.gdshader" id="2_2rrhh"]
+[ext_resource type="Texture2D" uid="uid://w61cm1hum04g" path="res://assets/images/fish/chunks/meat_square.png" id="3_rdq74"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4h5kf"]
+resource_local_to_scene = true
+shader = ExtResource("2_2rrhh")
+shader_parameter/Smooth = null
+shader_parameter/outline_color = Vector4(0.86, 0.39, 0, 1)
+shader_parameter/pixel_size = null
+shader_parameter/width = 0.0
+shader_parameter/width_speed = 2.744
+
+[node name="Square" instance=ExtResource("1_3qspu")]
+position = Vector2(-2, 0)
+
+[node name="MeatSprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_4h5kf")
+position = Vector2(-0.0254157, -1.90735e-06)
+texture = ExtResource("3_rdq74")
+
+[node name="MouseDetection" parent="." index="1"]
+position = Vector2(-0.00011584, -32)
+
+[node name="CollisionPolygon2D" parent="MouseDetection" index="0"]
+polygon = PackedVector2Array(-31.9999, 64, -32, 0.00011584, 32, -0.00011584, 32.0002, 63.9999)
+
+[node name="GridSettling" parent="." index="2"]
+position = Vector2(-0.00011584, -32)
+
+[node name="CollisionPolygon2D" parent="GridSettling" index="0"]
+position = Vector2(0.000347519, 96)
+polygon = PackedVector2Array(-14.0002, -80, -14.0002, -48, 9.99977, -48, 9.99977, -80)

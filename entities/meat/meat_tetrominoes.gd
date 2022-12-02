@@ -1,12 +1,21 @@
 extends Node2D
 
-#These will be, SHOULD BE, automated
+@export var originalValue: int = 500
+var value: int
+
+#Where we are getting our bonuses/buffs from... relevant in the 'get_bonus' func
+var gotBonus = []
+
 #These check which grid points are being overlapped on drop (and a static int of how many grid blocks this item covers)
-@onready var beingDragged: bool = false
 
 @onready var gridSettling = $GridSettling
 @onready var gridCoverage = 4
 @onready var gridDetection = $GridDetection
+@onready var bonusDetection = $BonusDetection
+
+@onready var startingPos: Vector2
+@onready var beingDragged: bool = false
+@onready var meatSprite : Sprite2D = $MeatSprite
 
 signal dragged( body, dragged )
 
@@ -19,6 +28,19 @@ var grid_vectors = [
 ]
 
 var mouse_in: bool = false
+
+func _ready() -> void:
+	value = originalValue
+	startingPos = self.global_position
+
+func _physics_process(delta: float) -> void:
+	
+	$Label.text = str('$',value)
+	#This is just for debugging, no need to keep
+	if beingDragged:
+		$MouseDetection.modulate = '#fff'
+	else:
+		$MouseDetection.modulate = '#000'
 
 func _on_mouse_detection_mouse_entered() -> void:
 	mouse_in = true
@@ -34,4 +56,9 @@ func _on_mouse_detection_input_event(viewport: Node, event: InputEvent, shape_id
 		beingDragged = false
 		emit_signal("dragged", self, false)
 		z_index = 1
+
+func get_bonus(from):
+	if gotBonus.find(from) < 0:
+		gotBonus.append[from]
+		value = value * 2
 		

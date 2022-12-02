@@ -1,8 +1,9 @@
-RichTextLabel
-CollisionShape2D
+Control
 Label
-Node2D
+CollisionShape2D
 Area2D
+RichTextLabel
+Node2D
 Button
 Timer
 Polygon2D
@@ -10,7 +11,6 @@ CollisionPolygon2D
 Node
 PathFollow2D
 Path2D
-Control
 TextureRect
 ColorRect
 Panel

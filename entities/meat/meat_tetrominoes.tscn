@@ -1,24 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvp6fbxpfl4ac"]
+[gd_scene load_steps=6 format=3 uid="uid://bvp6fbxpfl4ac"]
 
 [ext_resource type="Script" path="res://entities/meat/meat_tetrominoes.gd" id="1_kvi33"]
 [ext_resource type="Texture2D" uid="uid://busektrmdr2ej" path="res://assets/images/fish/chunks/meat_l.png" id="2_750dr"]
+[ext_resource type="Shader" path="res://assets/shaders/OutlinedSprite.gdshader" id="2_c11em"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqy6u"]
+resource_local_to_scene = true
+shader = ExtResource("2_c11em")
+shader_parameter/Smooth = null
+shader_parameter/outline_color = Vector4(0.86, 0.39, 0, 1)
+shader_parameter/pixel_size = null
+shader_parameter/width = 0.0
+shader_parameter/width_speed = 2.744
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5y8ia"]
 size = Vector2(64, 64)
 
 [node name="MeatTetrominoes" type="Node2D" groups=["block"]]
 z_index = 1
-rotation = 1.5708
 script = ExtResource("1_kvi33")
 metadata/_edit_group_ = true
 
 [node name="MeatSprite" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(0.862745, 0.392157, 0, 1)
+material = SubResource("ShaderMaterial_uqy6u")
 position = Vector2(32.2104, -62.0937)
 scale = Vector2(0.459538, 0.482134)
 texture = ExtResource("2_750dr")
 
+[node name="MouseDetection" type="Area2D" parent="." groups=["block"]]
+modulate = Color(0, 0, 0, 1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseDetection"]
+polygon = PackedVector2Array(-32, 32, -32, -160, 96, -160, 96, -96, 32, -96, 32, 32)
+
 [node name="GridSettling" type="Area2D" parent="." groups=["block"]]
+collision_layer = 17
 collision_mask = 32
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="GridSettling"]
@@ -29,10 +46,12 @@ polygon = PackedVector2Array(-8, -136, -8, 16, 8, 16, 8, -120, 72, -120, 72, -13
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GridDetection"]
 shape = SubResource("RectangleShape2D_5y8ia")
 
-[node name="MouseDetection" type="Area2D" parent="." groups=["block"]]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MouseDetection"]
-polygon = PackedVector2Array(-32, 32, -32, -160, 96, -160, 96, -96, 32, -96, 32, 32)
+[node name="Label" type="Label" parent="."]
+layout_direction = 2
+offset_left = -13.0
+offset_top = -145.0
+offset_right = 76.0
+offset_bottom = -106.0
 
 [connection signal="input_event" from="MouseDetection" to="." method="_on_mouse_detection_input_event"]
 [connection signal="mouse_entered" from="MouseDetection" to="." method="_on_mouse_detection_mouse_entered"]

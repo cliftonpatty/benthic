@@ -66,6 +66,7 @@ Rotate={
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Fish"
 2d_physics/layer_4="StateTriggers"
+2d_physics/layer_5="Meat"
 2d_physics/layer_6="GridSettling"
 
 [rendering]

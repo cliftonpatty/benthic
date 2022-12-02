@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26p01dws5ji2"
-path="res://.godot/imported/hand_open.png-54126d2cae990f25e2322855ed803ae5.ctex"
+uid="uid://bbb6r7mlvuqf6"
+path="res://.godot/imported/crystal_square.png-4b2f335550a84dc69c3aec15c460a631.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/elements/cursors/hand_open.png"
-dest_files=["res://.godot/imported/hand_open.png-54126d2cae990f25e2322855ed803ae5.ctex"]
+source_file="res://assets/images/fish/chunks/crystal_square.png"
+dest_files=["res://.godot/imported/crystal_square.png-4b2f335550a84dc69c3aec15c460a631.ctex"]
 
 [params]
 
