@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxvjjhuttirbs"
-path="res://.godot/imported/hand_closed.png-7b9943e7af3e9de066e86c281e963aaf.ctex"
+path="res://.godot/imported/hand_closed.png-540a10e183f9e7ece7c1a5cd7051d550.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/elements/cursors/hand_closed.png"
-dest_files=["res://.godot/imported/hand_closed.png-7b9943e7af3e9de066e86c281e963aaf.ctex"]
+source_file="res://UI/elements/cursors/hand_closed.png"
+dest_files=["res://.godot/imported/hand_closed.png-540a10e183f9e7ece7c1a5cd7051d550.ctex"]
 
 [params]
 

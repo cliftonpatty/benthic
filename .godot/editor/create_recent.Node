@@ -1,11 +1,12 @@
+RichTextLabel
+CollisionShape2D
+Label
 Node2D
 Area2D
 Button
 Timer
 Polygon2D
 CollisionPolygon2D
-Label
-CollisionShape2D
 Node
 PathFollow2D
 Path2D
@@ -16,7 +17,6 @@ Panel
 CPUParticles2D
 AnimatedSprite2D
 AnimationPlayer
-RichTextLabel
 CharacterBody2D
 AnimationTree
 Camera2D

@@ -1,28 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://cot4x7imsktkj"]
+[gd_scene load_steps=4 format=3 uid="uid://cot4x7imsktkj"]
 
 [ext_resource type="Script" path="res://entities/world/sorting/ice_box.gd" id="1_oio71"]
-[ext_resource type="Script" path="res://entities/world/sorting/grid_block.gd" id="2_0p2si"]
+[ext_resource type="PackedScene" uid="uid://bu61gi1xmoatf" path="res://entities/world/sorting/grid_block.tscn" id="2_ji80q"]
 [ext_resource type="PackedScene" uid="uid://bvp6fbxpfl4ac" path="res://entities/meat/meat_tetrominoes.tscn" id="3_f0fr3"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfs8n"]
-size = Vector2(64, 64)
 
 [node name="IceBox" type="Node2D"]
 script = ExtResource("1_oio71")
 
 [node name="Grid" type="Node2D" parent="."]
 
-[node name="GridBlock" type="Area2D" parent="Grid" groups=["grid"]]
-position = Vector2(96, 96)
-collision_layer = 33
-script = ExtResource("2_0p2si")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grid/GridBlock"]
-shape = SubResource("RectangleShape2D_yfs8n")
-
-[node name="Polygon2D" type="Polygon2D" parent="Grid/GridBlock"]
-modulate = Color(0.658824, 0.658824, 0.658824, 1)
-polygon = PackedVector2Array(-24, -24, -24, 24, 24, 24, 24, -24)
+[node name="GridBlock" parent="Grid" instance=ExtResource("2_ji80q")]
+position = Vector2(318, 160)
 
 [node name="Button" type="Button" parent="."]
 offset_right = 8.0
@@ -44,3 +32,7 @@ position = Vector2(698, 482)
 
 [node name="MeatTetrominoes5" parent="Meat" instance=ExtResource("3_f0fr3")]
 position = Vector2(916, 93)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 212.0
+offset_bottom = 495.0
