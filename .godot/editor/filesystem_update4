@@ -1,14 +1,2 @@
-res://entities/meat/crystal_tetrominoes.tscn
-res://assets/shaders/OutlinedSprite.gdshader
-res://entities/world/sorting/ice_box.tscn
-res://entities/meat/meat_tetrominoes.tscn
-res://entities/meat/pieces/stair_step.tscn
-res://entities/meat/pieces/square_meat.tscn
-res://entities/meat/pieces/square.tscn
-res://entities/world/sorting/ice_box.gd
-res://entities/meat/meat_tetrominoes.gd
-res://entities/meat/pieces/l_meat.tscn
-res://entities/world/organizing/organizing.tscn
-res://entities/world/sorting/grid_block.tscn
-res://entities/world/fishing/world.tscn
 res://entities/world/fishing/surface_detector.tscn
+res://assets/shaders/OutlinedSprite.gdshader
